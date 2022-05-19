@@ -78,8 +78,25 @@ const entry = () =>{
             console.log(brojac)
         }
 
-        if(cars.id >= 1 && cars.id <=brojac){
-            console.log('Izmjenjeno')
+        console.log(typeof cars.id)
+
+        if(cars.id > brojac){
+            fetch('https://ptf-web-dizajn-2022.azurewebsites.net/api/Cars', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(
+                    {
+                        id: Number(cars.id),
+                        name: cars.name,
+                        manufacturer: cars.manufacturer,
+                        imageUrl: cars.imgUrl,
+                        price: Number(cars.price),
+                        year: Number(cars.year)
+                    }
+                )
+            }).then(res => console.log(res))
         } else {
             console.log('Djes poso')
         }
