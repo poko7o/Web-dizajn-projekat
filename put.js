@@ -67,7 +67,7 @@ const entry = () =>{
     container.appendChild(button)
 
     const create = () =>{
-        let cars = {id: idI.value, name: nameI.value, imgUrl: imgUrlI.value, year: yearI.value, price: priceI.value}
+        let cars = {id: idI.value, name: nameI.value, manufacturer: manufacturerI.value, imgUrl: imgUrlI.value, year: yearI.value, price: priceI.value}
 
         let brojac = 0;
         
@@ -82,21 +82,21 @@ const entry = () =>{
 
         if(cars.id > brojac){
             fetch('https://ptf-web-dizajn-2022.azurewebsites.net/api/Cars', {
-                method: 'POST',
+                method: "POST",
                 headers: {
                     'Content-type': 'application/json'
                 },
                 body: JSON.stringify(
                     {
-                        id: Number(cars.id),
-                        name: cars.name,
-                        manufacturer: cars.manufacturer,
-                        imageUrl: cars.imgUrl,
-                        price: Number(cars.price),
-                        year: Number(cars.year)
+                        "id": Number(cars.id),
+                        "name": cars.name,
+                        "manufacturer": cars.manufacturer,
+                        "imageUrl": cars.imgUrl,
+                        "price": Number(cars.price),
+                        "year": Number(cars.year)
                     }
                 )
-            }).then(res => console.log(res))
+            }).then(res => console.log(res)).catch(err => {console.log(err)})
         } else {
             console.log('Djes poso')
         }
