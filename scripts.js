@@ -5,8 +5,9 @@ const app = document.getElementById('root')
 const container = document.createElement('div')
 container.setAttribute('class', 'container')
 
-
 app.appendChild(container)
+
+var brojac = 0
 
 var request = new XMLHttpRequest()
 request.open('GET', 'https://ptf-web-dizajn-2022.azurewebsites.net/api/Cars', true)
@@ -39,6 +40,8 @@ request.onload = function () {
       card.appendChild(img)
       card.appendChild(year)
       card.appendChild(price)
+
+      brojac++
     })
   } else {
     const errorMessage = document.createElement('marquee')
@@ -47,6 +50,7 @@ request.onload = function () {
   }
 }
 request.send()
+
 
 
 
