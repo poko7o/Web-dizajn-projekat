@@ -1,14 +1,17 @@
+// api: https://ptf-web-dizajn-2022.azurewebsites.net/api/Cars
+
 const btn = document.getElementById('btn')
-
-const create = () =>{
-
-}
 
 const entry = () =>{
     const container = document.createElement('div')
     container.setAttribute('class', 'card')
 
     var form = document.createElement('form')
+
+    var idI = document.createElement('input')
+    idI.setAttribute("type", "text");
+    idI.setAttribute("name", "id");
+    idI.setAttribute("placeholder", "Id");
 
     var nameI = document.createElement('input')
     nameI.setAttribute("type", "text");
@@ -43,6 +46,9 @@ const entry = () =>{
 
     btn.appendChild(container)
     container.appendChild(form)
+    form.appendChild(idI)
+    form.appendChild(br.cloneNode())
+
     form.appendChild(nameI)
     form.appendChild(br.cloneNode())
 
@@ -59,6 +65,25 @@ const entry = () =>{
     form.appendChild(br.cloneNode())
 
     container.appendChild(button)
+
+    const create = () =>{
+        let cars = {id: idI.value, name: nameI.value, imgUrl: imgUrlI.value, year: yearI.value, price: priceI.value}
+
+        let brojac = 0;
+        
+        fetch('https://ptf-web-dizajn-2022.azurewebsites.net/api/Cars').then(res => res.json()).then(data => brojacF(data))
+
+        let brojacF = (data) =>{
+            data.forEach(id => brojac++)
+            console.log(brojac)
+        }
+
+        if(cars.id >= 1 && cars.id <=brojac){
+            console.log('Izmjenjeno')
+        } else {
+            console.log('Djes poso')
+        }
+    }
 }
 
 const button = document.createElement('button')
