@@ -108,12 +108,3 @@ buttonM.textContent = 'Modify existing car'
 buttonM.onclick = function() {modify()}
 
 put.appendChild(buttonM)
-
-var b = '1'
-var c = 5
-
-if(Number(b) <= c && Number(b) > 0){
-    console.log('Valja')
-} else {
-    console.log('Nevalja')
-}
