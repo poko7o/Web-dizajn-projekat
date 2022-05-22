@@ -105,6 +105,7 @@ const entry = () =>{
 
 const button = document.createElement('button')
 button.textContent = 'Enter a new car'
+
 button.onclick = function() {entry()}
 
 btn.appendChild(button)
