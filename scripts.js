@@ -1,18 +1,14 @@
 const app = document.getElementById('root')
 
-
-
 const container = document.createElement('div')
 container.setAttribute('class', 'container')
 
 app.appendChild(container)
 
-var brojac = 0
-
 var request = new XMLHttpRequest()
 request.open('GET', 'https://ptf-web-dizajn-2022.azurewebsites.net/api/Cars', true)
 request.onload = function () {
-  // Begin accessing JSON data here
+
   var data = JSON.parse(this.response)
   if (request.status >= 200 && request.status < 400) {
     data.forEach(car => {
@@ -41,7 +37,6 @@ request.onload = function () {
       card.appendChild(year)
       card.appendChild(price)
 
-      brojac++
     })
   } else {
     const errorMessage = document.createElement('marquee')
