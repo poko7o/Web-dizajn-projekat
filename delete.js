@@ -5,6 +5,7 @@ const Del = () =>{
     container.setAttribute('class', 'card')
 
     var form = document.createElement('form')
+    form.setAttribute('id', 'formaDelete')
 
     var idI = document.createElement('input')
     idI.setAttribute("type", "text");
@@ -13,9 +14,12 @@ const Del = () =>{
 
     var br = document.createElement("br");
 
+    var butons = document.createElement('div')
+
     const buttonD = document.createElement('button')
     buttonD.textContent = 'Submit'
-    buttonD.onclick = function() {submit()}
+    buttonD.onclick = function() {deleteSubmit()}
+    buttonD.setAttribute('type', 'button')
 
     del.appendChild(container)
     container.appendChild(form)
@@ -33,7 +37,7 @@ const Del = () =>{
         console.log(brojac)
     }
 
-    const submit = () =>{
+    const deleteSubmit = () =>{
 
         let id = idI.value
 
@@ -50,6 +54,12 @@ const Del = () =>{
         } else {
             console.log('Djes poso')
         }
+    }
+
+    const ex = () =>{
+        var elem = document.getElementById('formaDelete')
+        elem.parentNode.removeChild(elem)
+        return false
     }
 }
 
