@@ -1,26 +1,81 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 #root {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
+   background-color: rgb(255, 255, 255);
+  
   }
   
   .container {
     display: flex;
     flex-wrap: wrap;
+    
   }
   
   .card {
-    margin: 1rem;
-    border: 1px solid gray;
+    margin: 5px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(58, 8, 8);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(0, 0, 0);
+    
+    
+  }
+
+  img{
+    height: 300px;
+    
+  }
+  h2{
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+  h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+
+  .options {
+    background-color: #e9cccc;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+  
   }
   
-  @media screen and (min-width: 600px) {
-    .card {
-      flex: 1 1 calc(50% - 2rem);
-    }
+  button{
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    vertical-align: top;
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+
   }
-  
-  @media screen and (min-width: 900px) {
-    .card {
-      flex: 1 1 calc(33% - 2rem);
-    }
+  form{
+    margin-bottom: 10px;
+        margin-top: 10px;
+        font-family: cursive, sans-serif;
+        outline: 0;
+        background: #70a8ce;
+        padding: 4px; 
   }
