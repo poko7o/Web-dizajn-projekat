@@ -55,12 +55,6 @@ const Del = () =>{
             console.log('Djes poso')
         }
     }
-
-    const ex = () =>{
-        var elem = document.getElementById('formaDelete')
-        elem.parentNode.removeChild(elem)
-        return false
-    }
 }
 
 const buttonD = document.createElement('button')
