@@ -66,10 +66,7 @@ const entry = () =>{
 
     container.appendChild(button)
 
-    const create = () =>{
-        let cars = {id: idI.value, name: nameI.value, manufacturer: manufacturerI.value, imgUrl: imgUrlI.value, year: yearI.value, price: priceI.value}
-
-        let brojac = 0;
+    let brojac = 0;
         
         fetch('https://ptf-web-dizajn-2022.azurewebsites.net/api/Cars').then(res => res.json()).then(data => brojacF(data))
 
@@ -78,7 +75,10 @@ const entry = () =>{
             console.log(brojac)
         }
 
-        console.log(typeof cars.id)
+    const create = () =>{
+        let cars = {id: idI.value, name: nameI.value, manufacturer: manufacturerI.value, imgUrl: imgUrlI.value, year: yearI.value, price: priceI.value}
+
+        console.log(cars.id)
 
         if(cars.id > brojac){
             fetch('https://ptf-web-dizajn-2022.azurewebsites.net/api/Cars', {
